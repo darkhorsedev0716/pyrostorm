@@ -15,17 +15,18 @@ exports.GetDroplets = function(callback) {
   });
 };
 
-exports.GetDroplet = function(droplet, callback) {
-  https.get('https://api.digitalocean.com/droplets/' + droplet + '?client_id=' + this.clientKey + '&api_key=' + this.apiKey, function(res) {
+exports.GetDroplet = function(info, callback) {
+  https.get('https://api.digitalocean.com/droplets/' + info.droplet + '?client_id=' + this.clientKey + '&api_key=' + this.apiKey, function(res) {
     res.on('data', function(data) {
       callback(data);
     });
   });
 };
 
-exports.NewDroplet = function(droplet, name, size, image, region, virtio, sshKey, callback) {
-  https.get('https://api.digitalocean.com/droplets/new??client_id=' + this.clientKey + '&api_key=' + this.apiKey + '&name=' + name + '&size_id=' + size
-  + '&image_id=' + image + '&region_id=' + region + '&client_id=' + this.clientKey + '&virtio=' + virtio + '&ssh_key_ids=' + sshKey, function(res) {
+exports.NewDroplet = function(info, callback) {
+  https.get('https://api.digitalocean.com/droplets/new??client_id=' + this.clientKey + '&api_key=' + this.apiKey + '&name=' + info.name 
+  + '&size_id=' + info.size + '&image_id=' + info.image + '&region_id=' + info.region + '&client_id=' + this.clientKey 
+  + '&virtio=' + info.virtio + '&ssh_key_ids=' + info.sshKey, function(res) {
     res.on('data', function(data) {
       callback(data);
     });

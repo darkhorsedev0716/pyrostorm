@@ -6,6 +6,10 @@ digitalocean.GetDroplets(function(data) {
   process.stdout.write(data);
 });
 
-digitalocean.NewDroplet('196645', 'test', '66', '2676', '1', '1', '', function(data) {
+digitalocean.GetDroplet({'droplet': '196645'}, function(data) {
+  process.stdout.write(data);
+});
+
+digitalocean.NewDroplet({'name': 'test', 'size': '66', 'image': '2676', 'region': '1', 'virtio': '1'}, function(data) {
   process.stdout.write(data);
 });
