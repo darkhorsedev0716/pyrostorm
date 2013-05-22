@@ -1,0 +1,14 @@
+{
+  "name": "DigitalOcean-API-Node",
+  "description": "Basic API for Digital Ocean for use with node.js",
+  "version": "0.0.1",
+  "author": "Justin Harrison <justin@pyrohail.com>",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/replace"
+  },
+  "main": "index.js",
+  "dependencies": {
+      
+  }
+}
