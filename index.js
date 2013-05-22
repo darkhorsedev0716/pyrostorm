@@ -129,3 +129,83 @@ exports.RenameDroplet = function(info, callback) {
     });
   });
 };
+
+exports.GetRegions = function(info, callback) {
+  https.get(domain + 'regions/?client_id=' + this.clientKey + '&api_key=' + this.apiKey, function(res) {
+    res.on('data', function(data) {
+      callback(data);
+    });
+  });
+};
+
+exports.GetImages = function(info, callback) {
+  https.get(domain + 'images/?client_id=' + this.clientKey + '&api_key=' + this.apiKey, function(res) {
+    res.on('data', function(data) {
+      callback(data);
+    });
+  });
+};
+
+exports.ShowImage = function(info, callback) {
+  https.get(domain + 'images' + info.image + '/?client_id=' + this.clientKey + '&api_key=' + this.apiKey + '&name=' + info.name, function(res) {
+    res.on('data', function(data) {
+      callback(data);
+    });
+  });
+};
+
+exports.TransferImage = function(info, callback) {
+  https.get(domain + 'images' + info.image + '/transfer/?client_id=' + this.clientKey + '&api_key=' + this.apiKey + '&region_id=' + info.region, function(res) {
+    res.on('data', function(data) {
+      callback(data);
+    });
+  });
+};
+
+exports.GetSshKeys = function(callback) {
+  https.get(domain + 'ssh_keys/?client_id=' + this.clientKey + '&api_key=' + this.apiKey, function(res) {
+    res.on('data', function(data) {
+      callback(data);
+    });
+  });
+};
+
+exports.GetSshKey = function(info, callback) {
+  https.get(domain + 'ssh_keys/' + info.sshKey + '/?client_id=' + this.clientKey + '&api_key=' + this.apiKey, function(res) {
+    res.on('data', function(data) {
+      callback(data);
+    });
+  });
+};
+
+exports.AddSshKey = function(info, callback) {
+  https.get(domain + 'ssh_keys/new/?name=' + info.name + '&ssh_pub_key=' + info.sshKey + '&client_id=' + this.clientKey + '&api_key=' + this.apiKey, function(res) {
+    res.on('data', function(data) {
+      callback(data);
+    });
+  });
+};
+
+exports.EditSshKey = function(info, callback) {
+  https.get(domain + 'ssh_keys/' + info.sshKey + '/edit/?client_id=' + this.clientKey + '&api_key=' + this.apiKey, function(res) {
+    res.on('data', function(data) {
+      callback(data);
+    });
+  });
+};
+
+exports.DestroySshKey = function(info, callback) {
+  https.get(domain + 'ssh_keys/' + info.sshKey + '/destroy/?client_id=' + this.clientKey + '&api_key=' + this.apiKey, function(res) {
+    res.on('data', function(data) {
+      callback(data);
+    });
+  });
+};
+
+exports.GetSizes = function(callback) {
+  https.get(domain + 'sizes/?client_id=' + this.clientKey + '&api_key=' + this.apiKey, function(res) {
+    res.on('data', function(data) {
+      callback(data);
+    });
+  });
+};
