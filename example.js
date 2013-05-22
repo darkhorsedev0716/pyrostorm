@@ -1,4 +1,4 @@
-var digitalocean = require('./index');
+var digitalocean = require('./lib/index');
   
 digitalocean.SetKeys('insertClientKey', 'insertAPIKey');
 
