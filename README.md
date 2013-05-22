@@ -1,3 +1,8 @@
+Description
+=====================
+
+This is a Digital Ocean API wrapper for the web framework node.js, this is not even close to being a full wrapper yet.
+
 Usage
 =====================
 
