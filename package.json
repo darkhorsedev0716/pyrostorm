@@ -1,7 +1,7 @@
 {
   "name": "pyrostorm",
   "description": "Digital Ocean API wrapper for node.js",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "author": "Justin Harrison <justin@pyrohail.com>",
   "repository": {
     "type": "git",
