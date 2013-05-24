@@ -1,6 +1,6 @@
 var digitalocean = require('./lib/index');
   
-digitalocean.SetKeys('insertClientKey', 'insertAPIKey');
+digitalocean.SetKeys({'clientKey': 'insertClientKey', 'apiKey': 'insertAPIKey'});
 
 /*
 digitalocean.GetDroplets(function(data) {
