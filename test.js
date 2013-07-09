@@ -1,1 +1,0 @@
-var pyrostorm = require('pyrostorm');
